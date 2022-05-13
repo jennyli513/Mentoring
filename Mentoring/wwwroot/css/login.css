@@ -1,0 +1,117 @@
+#loginContainer
+{
+    margin-top:3%;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+}
+
+#login-left img
+{
+    width: 100%;
+    height:100%;
+    object-fit: contain;
+}
+
+#login-right
+{
+    text-align: center;
+}
+
+
+#login-right h1
+{
+    padding-top: 20%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+#login-right input
+{
+   border-radius: 14px;
+   background-color: #f9f6f9;
+  
+}
+
+#login-right .form-floating
+{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#loginContainer button
+{  
+    width:40%;
+    background-color: #facc19;
+    font-weight: bold;
+    height: 50px;
+    border-radius: 14px;
+}
+
+#loginContainer button:hover
+{
+    background-color: #00a8ea;
+    color: white;
+    transform: scale(1.05);
+}
+@media screen and (min-width: 1280px) 
+{
+    .signupText
+    {
+        padding:10px;
+        position: absolute;
+        top:35%;
+        left: 15%;  
+        margin:inherit;
+        background-color: rgba(255,255,255,0.8);
+       border-radius: 14px;
+        width: 25%;
+        text-align: center;
+    }
+    .signupText h3 
+    {
+        margin: 30px;
+    }
+}
+@media screen and (min-width: 1920px) 
+{
+    .signupText
+    {
+        padding:10px;
+        position: absolute;
+        top:35%;
+        left: 20%;  
+        margin:inherit;
+        background-color: rgba(255,255,255,0.8);
+       border-radius: 14px;
+        width: 25%;
+        text-align: center;
+    }
+    .signupText h3 
+    {
+        margin: 30px;
+    }
+}
+
+@media screen and (max-width: 767px) 
+{
+    #loginContainer
+{
+    margin: 0 auto;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+}
+    #loginContainer .row{
+        display: flex;
+        flex-flow: column-reverse;
+    }
+
+    .signupText
+    {
+       padding-top: 20px;
+       padding-bottom: 20px;
+        display:block;
+        text-align: center;
+        background-color: f9f6f9;   
+    }
+}

@@ -1,0 +1,7 @@
+{
+  "EnableDeveloperExceptions": "True",
+  "ConnectionStrings": 
+  { "DBConnection": "Server=DESKTOP-TR2G9JC\\SQLEXPRESS;Database=Mentoring2;Uid=sa;Password=265200as;" }
+
+
+}
