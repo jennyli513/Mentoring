@@ -11,7 +11,7 @@ namespace Mentoring.Models
         public string lastName { get; set; }
         public string studentNumber { get; set; }
         public string email { get; set; }
-        public long subjectId { get; set; }
         public string request { get; set; }
+        public long subjectId { get; set; }
     }
 }
