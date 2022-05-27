@@ -80,15 +80,22 @@
                     </div>
                    </div>
                    <div class="nav-item dropdown">
-                    <a href="search-groups.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">  <i class="fa fa-handshake me-2"></i>Groups</a>
+                    <a href="@Url.Action("Index", "Groups")" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">  <i class="fa fa-handshake me-2"></i>Groups</a>
                     <div class="dropdown-menu bg-transparent border-0">
-                        <a href="search-groups.html" class="dropdown-item">Search for Groups</a>
-                        <a href="add-group.html" class="dropdown-item">Add New Group</a>
+                        <a href="@Url.Action("Index", "Groups")" class="dropdown-item">Search for Groups</a>
+                        <a href="@Url.Action("Create", "Groups")" class="dropdown-item">Add New Group</a>
                     </div>
                    </div>
-                    <a href="subject.html"class="nav-item nav-link"><i class="fa fa-laptop me-2"></i>Subjects</a>
+                   <div class="nav-item dropdown">
+                    <a href="@Url.Action("Index", "Sessions")" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">  <i class="fa fa-handshake me-2"></i>Sessions</a>
+                    <div class="dropdown-menu bg-transparent border-0">
+                        <a href="@Url.Action("Index", "Sessions")" class="dropdown-item">View Sessions</a>
+                        <a href="@Url.Action("Create", "Sessions")" class="dropdown-item">Add New Session</a>
+                    </div>
+                   </div>
+                    <a href="@Url.Action("Index", "Subjects")"class="nav-item nav-link"><i class="fa fa-laptop me-2"></i>Subjects</a>
                     <a href="myprofile.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>My Profile</a>
-                    <a href="logout.html" class="nav-item nav-link"><i class="fa fa-arrow-right-from-bracket me-2"></i></i>Log out</a>
+                    <a href="logout.html" class="nav-item nav-link"><i class="fa fa-arrow-right-from-bracket me-2"></i>Log out</a>
                 </div>
             </nav>
         </div>
