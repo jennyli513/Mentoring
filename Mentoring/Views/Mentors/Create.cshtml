@@ -1,0 +1,87 @@
+﻿@model Mentoring.Models.Mentor
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Mentor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="firstName" class="control-label"></label>
+                <input asp-for="firstName" class="form-control" />
+                <span asp-validation-for="firstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="lastName" class="control-label"></label>
+                <input asp-for="lastName" class="form-control" />
+                <span asp-validation-for="lastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="studentNumber" class="control-label"></label>
+                <input asp-for="studentNumber" class="form-control" />
+                <span asp-validation-for="studentNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="email" class="control-label"></label>
+                <input asp-for="email" class="form-control" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="availableDay" class="control-label"></label>
+                  @for (int i = 0; i < Model.weekdayList.Count(); i++)
+
+                {
+
+                    @Html.CheckBoxFor(m => m.weekdayList[i].IsChecked, new { @class = "flat" })
+
+                    @Html.DisplayFor(m => m.weekdayList[i].Text)
+
+                    @Html.HiddenFor(m => m.weekdayList[1].Value)
+                    <br/>
+                }
+                <span asp-validation-for="availableDay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="availableTime" class="control-label"></label>
+                <input asp-for="availableTime" class="form-control" />
+                <span asp-validation-for="availableTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @*<label asp-for="subjectId" class="control-label"></label>
+                <input asp-for="subjectId" class="form-control" />
+                <span asp-validation-for="subjectId" class="text-danger"></span>*@
+
+               <label asp-for="subjectId" class="control-label"></label>
+                 @for (int i = 0; i < Model.subjectList.Count(); i++)
+
+                {
+
+                    @Html.CheckBoxFor(m => m.subjectList[i].IsChecked, new { @class = "flat" })
+
+                    @Html.DisplayFor(m => m.subjectList[i].Text)
+
+                    @Html.HiddenFor(m => m.subjectList[1].Value)
+                    <br/>
+                }
+                 <span asp-validation-for="subjectId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
