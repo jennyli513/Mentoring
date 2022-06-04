@@ -123,12 +123,46 @@ namespace Mentoring.Controllers
 
             foreach (var s in subject)
             {
-                mentor.subjectList.Add(new CheckBox_Subject { Text = s.title, Value = s.subjectId, IsChecked = false });
+                if(mentor.subject.Contains(s.title))
+                   mentor.subjectList.Add(new CheckBox_Subject { Text = s.title, Value = s.subjectId, IsChecked = true });
+                else
+                   mentor.subjectList.Add(new CheckBox_Subject { Text = s.title, Value = s.subjectId, IsChecked = false });
             }
 
 
+            mentor.weekdayList = new List<CheckBox_Weekdays>();
+           if(!String.IsNullOrEmpty(mentor.availableDay))
+            {
+                if (mentor.availableDay.Contains("Monday"))
+                    mentor.weekdayList.Add(new CheckBox_Weekdays { Text = "Monday", Value = 1, IsChecked = true });
+                else
+                    mentor.weekdayList.Add(new CheckBox_Weekdays { Text = "Monday", Value = 1, IsChecked = false });
+                if (mentor.availableDay.Contains("Tuesday"))
+                    mentor.weekdayList.Add(new CheckBox_Weekdays { Text = "Tuesday", Value = 2, IsChecked = true });
+                else
+                    mentor.weekdayList.Add(new CheckBox_Weekdays { Text = "Tuesday", Value = 2, IsChecked = false });
+                if (mentor.availableDay.Contains("Wednesday"))
+                    mentor.weekdayList.Add(new CheckBox_Weekdays { Text = "Wednesday", Value = 3, IsChecked = true });
+                else
+                    mentor.weekdayList.Add(new CheckBox_Weekdays { Text = "Wednesday", Value = 3, IsChecked = false });
+                if (mentor.availableDay.Contains("Thursday"))
+                    mentor.weekdayList.Add(new CheckBox_Weekdays { Text = "Thursday", Value = 4, IsChecked = true });
+                else
+                    mentor.weekdayList.Add(new CheckBox_Weekdays { Text = "Thursday", Value = 4, IsChecked = false });
+                if (mentor.availableDay.Contains("Friday"))
+                    mentor.weekdayList.Add(new CheckBox_Weekdays { Text = "Friday", Value = 5, IsChecked = true });
+                else
+                    mentor.weekdayList.Add(new CheckBox_Weekdays { Text = "Friday", Value = 5, IsChecked = false });
 
-            fillWeekdaysList(mentor);
+            }
+           else
+            {
+                mentor.weekdayList.Add(new CheckBox_Weekdays { Text = "Monday", Value = 1, IsChecked = false });
+                mentor.weekdayList.Add(new CheckBox_Weekdays { Text = "Tuesday", Value = 2, IsChecked = false });
+                mentor.weekdayList.Add(new CheckBox_Weekdays { Text = "Wednesday", Value = 3, IsChecked = false });
+                mentor.weekdayList.Add(new CheckBox_Weekdays { Text = "Thursday", Value = 4, IsChecked = false });
+                mentor.weekdayList.Add(new CheckBox_Weekdays { Text = "Friday", Value = 5, IsChecked = false });
+            }
 
             return View(mentor);
         }
