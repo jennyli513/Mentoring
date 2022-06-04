@@ -2,7 +2,34 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container-fluid">
+   <div class="row mt-3 g-4">
+        <div class="col-xl-6">
+            <div class="bg-light rounded d-flex align-items-center  p-4">
+                <i class="fa fa-book-open-reader fa-3x text-primary"></i>
+                           
+                <div class="ms-3 px-lg-5">
+                    @Html.ActionLink("Mentors","Index", "Mentors") 
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 ">
+            <div class="bg-light rounded d-flex align-items-center p-4">
+                <i class="fa fa-user-pen fa-3x text-primary"></i>
+                <div class="ms-3 px-lg-5">
+                    @Html.ActionLink("Mentees","Index", "Mentees") 
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-6 ">
+            <div class="bg-light rounded d-flex align-items-center p-4">
+                <i class="fa fa-handshake fa-3x text-primary"></i>
+               
+                <div class="ms-3 px-lg-5">
+                    @Html.ActionLink("Groups","Index", "Groups") 
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

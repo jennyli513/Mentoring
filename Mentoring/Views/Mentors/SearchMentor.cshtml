@@ -3,8 +3,18 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h1>Mentor List</h1>
+<h1 class="mt-3 mb-2">Search For Mentors</h1>
+@using (Html.BeginForm("SearchMentor", "Mentors", FormMethod.Get))
+    {
+        <div class="mt-3 mb-2">
+            Find by name: @Html.TextBox("searchString", null,new{@style="width:40%"})  
+            <br/>
+           Find by subject: @Html.DropDownList("searchSubject", (IEnumerable<SelectListItem>)TempData["Subjects"], "---Select a subject---",
+                                               new{@class="mt-2 mb-2"})
+            <br/>
+               <input  type="submit" value="Search" />
+        </div>   
+    }
 
 <p>
     <a asp-action="Create">Create New Mentor</a>
@@ -69,3 +79,4 @@
 }
     </tbody>
 </table>
+

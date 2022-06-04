@@ -4,7 +4,7 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>Edit Mentor</h1>
 
 <h4>Mentor</h4>
 <hr />
@@ -35,7 +35,17 @@
             </div>
             <div class="form-group">
                 <label asp-for="availableDay" class="control-label"></label>
-                <input asp-for="availableDay" class="form-control" />
+                <br />
+                  @for (int i = 0; i < Model.weekdayList.Count(); i++)
+
+                {
+                    @Html.CheckBoxFor(m => m.weekdayList[i].IsChecked)
+                    @Model.weekdayList[i].Text
+                    @Html.HiddenFor(m => m.weekdayList[i].Value)
+                    @Html.HiddenFor(m => m.weekdayList[i].Text)
+                    
+                    <br/>
+                }
                 <span asp-validation-for="availableDay" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -44,9 +54,20 @@
                 <span asp-validation-for="availableTime" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="subjectId" class="control-label"></label>
-                <input asp-for="subjectId" class="form-control" />
-                <span asp-validation-for="subjectId" class="text-danger"></span>
+                <label asp-for="subject" class="control-label"></label>
+                <br />
+                 @for (int i = 0; i < Model.subjectList.Count(); i++)
+
+                {
+
+                    @Html.CheckBoxFor(m => m.subjectList[i].IsChecked)
+                    @Model.subjectList[i].Text
+                    @Html.HiddenFor(m => m.subjectList[i].Value)
+                    @Html.HiddenFor(m => m.subjectList[i].Text)
+                    
+                    <br/>
+                }
+                <span asp-validation-for="subject" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

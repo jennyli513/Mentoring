@@ -47,7 +47,7 @@
         <!-- Sidebar Start -->
           <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
-                <a href="index.html" class="navbar-brand mt-4 ms-4 mb-4"  >
+                <a asp-controller="Home" asp-action="Index" class="navbar-brand mt-4 ms-4 mb-4"  >
                    <h3 style ="word-break: keep-all">Student Mentoring System</h3>
                 </a>
                 <div class="d-flex align-items-center mt-4 ms-4 mb-4">
@@ -61,13 +61,13 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="admin.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a asp-controller="Home" asp-action="Index" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                
                     <div class="nav-item dropdown">
-                      <a href="search-mentors.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-book-open-reader me-2"></i>Mentors</a>
+                      <a asp-controller="Mentors" asp-action="Index" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-book-open-reader me-2"></i>Mentors</a>
                       <div class="dropdown-menu bg-transparent border-0">
-                          <a href="search-mentors.html" class="dropdown-item">Search for Mentors</a>
-                          <a href="add-mentor.html" class="dropdown-item">Add New Mentors</a>
+                          <a asp-controller="Mentors" asp-action="SearchMentor" class="dropdown-item">Search for Mentors</a>
+                          <a asp-controller="Mentors" asp-action="Create" class="dropdown-item">Add New Mentors</a>
                       </div>
                    </div>
                    <div class="nav-item dropdown">
@@ -139,8 +139,10 @@
                 </div>
             </nav>
             <!-- Navbar End -->
-             
-                @RenderBody()
+             <div class="container px-4">
+                  @RenderBody()
+             </div>
+               
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-light rounded-top p-4">

@@ -24,8 +24,8 @@ namespace Mentoring.Models
         public string availableDay { get; set; }
         [Display(Name = "Available Time")]
         public string availableTime { get; set; }
-        [Display(Name = "SubjectId")]
-        public string subjectId { get; set; }
+        [Display(Name = "Subject")]
+        public string subject { get; set; }
 
         [NotMapped]
         public List<CheckBox_Subject> subjectList { get; set; }

@@ -34,15 +34,15 @@
             </div>
             <div class="form-group">
                 <label asp-for="availableDay" class="control-label"></label>
+                <br />
                   @for (int i = 0; i < Model.weekdayList.Count(); i++)
 
                 {
-
-                    @Html.CheckBoxFor(m => m.weekdayList[i].IsChecked, new { @class = "flat" })
-
-                    @Html.DisplayFor(m => m.weekdayList[i].Text)
-
-                    @Html.HiddenFor(m => m.weekdayList[1].Value)
+                    @Html.CheckBoxFor(m => m.weekdayList[i].IsChecked)
+                    @Model.weekdayList[i].Text
+                    @Html.HiddenFor(m => m.weekdayList[i].Value)
+                    @Html.HiddenFor(m => m.weekdayList[i].Text)
+                    
                     <br/>
                 }
                 <span asp-validation-for="availableDay" class="text-danger"></span>
@@ -57,19 +57,20 @@
                 <input asp-for="subjectId" class="form-control" />
                 <span asp-validation-for="subjectId" class="text-danger"></span>*@
 
-               <label asp-for="subjectId" class="control-label"></label>
+               <label asp-for="subject" class="control-label"></label>
+               <br />
                  @for (int i = 0; i < Model.subjectList.Count(); i++)
 
                 {
 
-                    @Html.CheckBoxFor(m => m.subjectList[i].IsChecked, new { @class = "flat" })
-
-                    @Html.DisplayFor(m => m.subjectList[i].Text)
-
-                    @Html.HiddenFor(m => m.subjectList[1].Value)
+                    @Html.CheckBoxFor(m => m.subjectList[i].IsChecked)
+                    @Model.subjectList[i].Text
+                    @Html.HiddenFor(m => m.subjectList[i].Value)
+                    @Html.HiddenFor(m => m.subjectList[i].Text)
+                    
                     <br/>
                 }
-                 <span asp-validation-for="subjectId" class="text-danger"></span>
+                 <span asp-validation-for="subject" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
