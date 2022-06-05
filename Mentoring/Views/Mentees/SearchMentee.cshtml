@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Mentoring.Models.Mentee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<h1 class="mt-3 mb-2">Search For Mentees</h1>
+@using (Html.BeginForm("SearchMentee", "Mentees", FormMethod.Get))
+    {
+        <div class="mt-3 mb-2">
+            Find by name: @Html.TextBox("searchString", null,new{@style="width:40%"})  
+            
+               <input  type="submit" value="Search" />
+        </div>   
+    }
+
+<p>
+    <a asp-action="Create">Create New Mentee</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.firstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.studentNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.request)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.subjectId)
+            </th>
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.firstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.studentNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.request)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.subjectId)
+            </td>
+            
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.menteeId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.menteeId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.menteeId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
