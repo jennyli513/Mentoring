@@ -70,12 +70,12 @@
                           <a asp-controller="Mentors" asp-action="Create" class="dropdown-item">Add New Mentors</a>
                       </div>
                    </div>
-                   <div class="nav-item dropdown">
-                    <a href="search-mentees.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-user-pen me-2"></i>Mentees</a>
-                    <div class="dropdown-menu bg-transparent border-0">
-                        <a href="search-mentees.html" class="dropdown-item">Search for Mentees</a>
-                        <a href="add-mentee.html" class="dropdown-item">Add New Mentees</a>
-                    </div>
+                  <div class="nav-item dropdown">
+                      <a asp-controller="Mentees" asp-action="Index" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-book-open-reader me-2"></i>Mentee</a>
+                      <div class="dropdown-menu bg-transparent border-0">
+                          <a asp-controller="Mentees" asp-action="SearchMentee" class="dropdown-item">Search for Mentee</a>
+                          <a asp-controller="Mentees" asp-action="Create" class="dropdown-item">Add New Mentee</a>
+                      </div>
                    </div>
                    <div class="nav-item dropdown">
                     <a href="search-groups.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">  <i class="fa fa-handshake me-2"></i>Groups</a>
